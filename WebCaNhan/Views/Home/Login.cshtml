@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;  
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập/Đăng ký</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 32px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            text-align: center; 
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center;
+            color: #666;
+        }
+        .input-group {
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            padding-left: 40px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .input-group .fa {
+            position: absolute;
+            top: 50%;
+            left: 10px; 
+            transform: translateY(-50%);
+            color: #888;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            font-size: 15px;
+            color: #333;
+        }
+        label a {
+            text-decoration: underline;
+            cursor: pointer;
+            color: #007BFF;
+        }
+        
+    </style>
+</head>
+<body style="background: url('@Url.Content("~/Images/bgca.gif")') no-repeat center center fixed;">
+    <div class="overlay"></div>
+    <div class="container">
+        <img alt="Company Logo" height="100" src="~/Images/image.gif" width="100"/> 
+        <h2>Đăng nhập</h2>
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input placeholder="Tên đăng nhập" type="text"/>
+        </div>
+        <div class="input-group">
+            <i class="fa fa-key"></i>
+            <input placeholder="Mật khẩu" type="password"/>
+        </div>
+        <button>Đăng nhập</button>
+        <p>Quên mật khẩu? <a href="#">Đặt lại mật khẩu</a></p>
+        <div class="register-container">
+            <label class="register-label">
+                Bạn chưa có tài khoản?
+                <a href="#" class="register-link">Đăng ký</a>
+            </label>
+        </div>
+    </div>
+</body>
+</html>

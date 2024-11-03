@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebCaNhan.Data.ThanhVien>
+
+@{
+    ViewData["Title"] = "Thành Viên";
+}
+
+<h1>Danh sách thành viên</h1>
+<div class="d-flex justify-content-center my-4">
+    @foreach (var item in Model)
+    {
+        <div class="text-center mx-3">
+            <a asp-action="Details" asp-route-id="@item.Id">
+                <img src="@Url.Content(item.HinhAnh)" alt="@Html.DisplayFor(_ => item.Ten)" class="rounded-circle member-image" width="200" height="200">
+            </a>
+            <p>@Html.DisplayFor(_ => item.Ten)</p>
+            <p>@Html.DisplayFor(_ => item.MaSinhVien)</p>
+        </div>
+    }
+
+    <div class="text-center mx-3">
+        <a asp-action="Create">
+            <div class="rounded-circle add-member-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-plus-lg fs-1 text-muted"></i>
+            </div>
+        </a>
+        <p>Thêm thành viên</p>
+    </div>
+</div>
+
+<!-- Style -->
+<style>
+    .member-image {
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+    }
+
+    .add-member-circle {
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #aaa;
+    }
+
+    .mx-3 {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+</style>
